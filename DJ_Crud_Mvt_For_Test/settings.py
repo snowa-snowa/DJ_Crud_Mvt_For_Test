@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-dxn3kc2-2)w*q)95*q*&3%7mj2bi7c38+xifh4ujr@zw-51kn_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["dj-crud-mvt-for-test.onrender.com"]
 
 
 # Application definition
