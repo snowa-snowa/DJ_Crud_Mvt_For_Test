@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Person {{ object.pk }}{% endblock %}
+{% block content %}
+<h1>{{ object.name }}</h1>
+<p>Возраст: {{ object.age }}</p>
+<p>Email: {{ object.email }}</p>
+<a href="{% url 'person-update' object.pk %}">Редактировать</a> |
+<a href="{% url 'person-delete' object.pk %}">Удалить</a> |
+<a href="{% url 'person-list' %}">Назад к списку</a>
+{% endblock %}

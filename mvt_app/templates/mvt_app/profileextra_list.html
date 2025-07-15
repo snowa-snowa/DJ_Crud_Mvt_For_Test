@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}ProfileExtras{% endblock %}
+{% block content %}
+<h1>ProfileExtras</h1>
+<ul>
+  {% for obj in object_list %}
+    <li><a href="{% url 'profileextra-detail' obj.pk %}">{{ obj.phone }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

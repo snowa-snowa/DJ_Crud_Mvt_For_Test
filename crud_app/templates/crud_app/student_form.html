@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Форма Student{% endblock %}
+{% block content %}
+<h1>Форма Student</h1>
+<form method="post">{% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Сохранить</button>
+</form>
+<a href="{% url 'student-list' %}">Отмена</a>
+{% endblock %}

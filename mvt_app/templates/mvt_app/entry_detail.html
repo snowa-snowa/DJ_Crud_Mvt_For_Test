@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Entry {{ object.pk }}{% endblock %}
+{% block content %}
+<h1>{{ object.headline }}</h1>
+<p>Блог: <a href="{% url 'blog-detail' object.blog.pk %}">{{ object.blog.title }}</a></p>
+<a href="{% url 'entry-list' %}">Назад</a>
+{% endblock %}

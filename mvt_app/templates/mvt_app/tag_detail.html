@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}Tag {{ object.pk }}{% endblock %}
+{% block content %}
+<h1>{{ object.name }}</h1>
+<a href="{% url 'tag-list' %}">Назад</a>
+{% endblock %}

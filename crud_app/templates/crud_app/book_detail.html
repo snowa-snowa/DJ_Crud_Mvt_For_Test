@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Book {{ object.pk }}{% endblock %}
+{% block content %}
+<h1>{{ object.title }}</h1>
+<p>Дата публикации: {{ object.publication_date }}</p>
+<p>Автор: <a href="{% url 'author-detail' object.author.pk %}">{{ object.author }}</a></p>
+<a href="{% url 'book-update' object.pk %}">Редактировать</a> |
+<a href="{% url 'book-delete' object.pk %}">Удалить</a> |
+<a href="{% url 'book-list' %}">Назад</a>
+{% endblock %}

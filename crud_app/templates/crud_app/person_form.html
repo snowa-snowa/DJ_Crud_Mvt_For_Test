@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Форма Person{% endblock %}
+{% block content %}
+<h1>Форма Person</h1>
+<form method="post">{% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Сохранить</button>
+</form>
+<a href="{% url 'person-list' %}">Отмена</a>
+{% endblock %}

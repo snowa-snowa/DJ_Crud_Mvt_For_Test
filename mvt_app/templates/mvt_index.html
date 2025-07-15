@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}MVT App{% endblock %}
+{% block content %}
+  <div class="greeting-nav">
+    Добро пожаловать в MVT App
+  </div>
+
+  <div class="card">
+    <h2>MVT: все модели (List/Detail)</h2>
+    <ul class="link-list">
+      <li><a href="{% url 'profile-list' %}">Profiles</a></li>
+      <li><a href="{% url 'profileextra-list' %}">ProfileExtras</a></li>
+      <li><a href="{% url 'blog-list' %}">Blogs</a></li>
+      <li><a href="{% url 'entry-list' %}">Entries</a></li>
+      <li><a href="{% url 'tag-list' %}">Tags</a></li>
+      <li><a href="{% url 'article-list' %}">Articles</a></li>
+    </ul>
+    <a href="{% url 'index' %}" class="btn-animated">На главную</a>
+  </div>
+{% endblock %}

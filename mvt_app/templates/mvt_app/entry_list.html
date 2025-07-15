@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Entries{% endblock %}
+{% block content %}
+<h1>Entries</h1>
+<ul>
+  {% for obj in object_list %}
+    <li><a href="{% url 'entry-detail' obj.pk %}">{{ obj.headline }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

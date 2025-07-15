@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Article {{ object.pk }}{% endblock %}
+{% block content %}
+<h1>{{ object.title }}</h1>
+<p>Теги:
+  {% for t in object.tags.all %}
+    {{ t.name }}{% if not forloop.last %}, {% endif %}
+  {% empty %}нет{% endfor %}
+</p>
+<a href="{% url 'article-list' %}">Назад</a>
+{% endblock %}

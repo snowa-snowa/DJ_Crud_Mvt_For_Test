@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Список Author{% endblock %}
+{% block content %}
+<h1>Authors</h1>
+<ul>
+  {% for obj in object_list %}
+    <li><a href="{% url 'author-detail' obj.pk %}">{{ obj.name }}</a></li>
+  {% empty %}
+    <li>Записей нет</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'author-create' %}">Добавить Author</a>
+{% endblock %}

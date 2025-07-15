@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}CRUD App{% endblock %}
+{% block content %}
+  <div class="greeting-nav">
+    Добро пожаловать в CRUD App
+  </div>
+
+  <div class="card">
+    <h2>CRUD: все модели и действия</h2>
+    <ul class="link-list">
+      <li><a href="{% url 'person-list' %}">Список Person</a></li>
+      <li><a href="{% url 'person-create' %}">Добавить Person</a></li>
+      <li><a href="{% url 'passport-list' %}">Список Passport</a></li>
+      <li><a href="{% url 'passport-create' %}">Добавить Passport</a></li>
+      <li><a href="{% url 'author-list' %}">Список Author</a></li>
+      <li><a href="{% url 'author-create' %}">Добавить Author</a></li>
+      <li><a href="{% url 'book-list' %}">Список Book</a></li>
+      <li><a href="{% url 'book-create' %}">Добавить Book</a></li>
+      <li><a href="{% url 'course-list' %}">Список Course</a></li>
+      <li><a href="{% url 'course-create' %}">Добавить Course</a></li>
+      <li><a href="{% url 'student-list' %}">Список Student</a></li>
+      <li><a href="{% url 'student-create' %}">Добавить Student</a></li>
+    </ul>
+    <a href="{% url 'index' %}" class="btn-animated">На главную</a>
+  </div>
+{% endblock %}

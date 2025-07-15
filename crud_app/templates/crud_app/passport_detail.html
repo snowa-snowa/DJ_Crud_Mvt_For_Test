@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Passport {{ object.pk }}{% endblock %}
+{% block content %}
+<h1>№ {{ object.number }}</h1>
+<p>Дата выдачи: {{ object.issue_date }}</p>
+<p>Владелец: <a href="{% url 'person-detail' object.person.pk %}">{{ object.person }}</a></p>
+<a href="{% url 'passport-update' object.pk %}">Редактировать</a> |
+<a href="{% url 'passport-delete' object.pk %}">Удалить</a> |
+<a href="{% url 'passport-list' %}">Назад</a>
+{% endblock %}

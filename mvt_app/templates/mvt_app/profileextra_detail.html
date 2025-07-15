@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}ProfileExtra {{ object.pk }}{% endblock %}
+{% block content %}
+<h1>{{ object.phone }}</h1>
+<p>Профиль: <a href="{% url 'profile-detail' object.profile.pk %}">{{ object.profile.user_name }}</a></p>
+<a href="{% url 'profile-list' %}">Назад</a>
+{% endblock %}
