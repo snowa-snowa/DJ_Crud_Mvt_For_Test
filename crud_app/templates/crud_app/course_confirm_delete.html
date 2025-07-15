@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Удалить Course{% endblock %}
 {% block content %}
-<h1>Удалить Course {{ object.name }}</h1>
-<p>Вы уверены?</p>
-<form method="post">{% csrf_token %}
-  <button type="submit">Да, удалить</button>
-</form>
-<a href="{% url 'course-detail' object.pk %}">Отмена</a>
+  <div class="form-container">
+    <h2>Удалить {{ object.name }}?</h2>
+    <form method="post" class="flex space-x-4">
+      {% csrf_token %}
+      <button type="submit" class="btn-animated">Да, удалить</button>
+      <a href="{% url 'course-detail' object.pk %}" class="btn-animated">Отмена</a>
+    </form>
+  </div>
 {% endblock %}

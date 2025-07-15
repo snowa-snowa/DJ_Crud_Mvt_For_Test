@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["dj-crud-mvt-for-test.onrender.com"]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://dj-crud-mvt-for-test.onrender.com',
+]
 
 # Application definition
 

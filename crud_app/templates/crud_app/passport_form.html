@@ -1,10 +1,15 @@
 {% extends "base.html" %}
 {% block title %}Форма Passport{% endblock %}
 {% block content %}
-<h1>Форма Passport</h1>
-<form method="post">{% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Сохранить</button>
-</form>
-<a href="{% url 'passport-list' %}">Отмена</a>
+  <div class="form-container">
+    <h2>Добавить / Изменить Passport</h2>
+    <form method="post" class="space-y-4">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="flex space-x-4">
+        <button type="submit" class="btn-animated">Сохранить</button>
+        <a href="{% url 'passport-list' %}" class="btn-animated">Отмена</a>
+      </div>
+    </form>
+  </div>
 {% endblock %}
