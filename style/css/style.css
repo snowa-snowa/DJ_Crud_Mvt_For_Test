@@ -1,0 +1,132 @@
+/* 🔹 Базовое тело и шрифт */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #000; /* Чёрный фон */
+  color: #fff;
+}
+
+/* 🔹 Поля ввода */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #f0f0f0; /* светлый фон */
+  color: #000; /* Чёрный текст */
+  border: 1px solid #999;
+  border-radius: 0.5rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #6b21a8;
+  box-shadow: 0 0 12px rgba(107, 33, 168, 0.5);
+}
+
+/* 🔹 Метки (labels) */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  font-weight: 600;
+}
+
+/* 🔹 Неоновая кнопка */
+input[type="submit"],
+button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #6b21a8;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 10px rgba(107, 33, 168, 0.4);
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #6b21a8;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(107, 33, 168, 0.8);
+  transform: translateY(-1px);
+}
+
+/* 🔹 Ссылки */
+a {
+  color: #8b5cf6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #d946ef;
+}
+
+/* 🔹 Подчёркивание при наведении */
+.underline-hover {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.underline-hover::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(to right, #000000, #6b21a8);
+  transition: width 0.4s ease;
+}
+
+.underline-hover:hover::after {
+  width: 100%;
+}
+
+/* 🔹 Неоновая подсветка для блоков */
+.neon-hover {
+  transition: box-shadow 0.5s ease;
+}
+
+.neon-hover:hover {
+  box-shadow: 0 0 40px rgba(107, 33, 168, 0.4);
+}
+
+/* 🔹 Выравнивание форм и блоков */
+.form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+/* 🔹 Сообщения */
+.error {
+  color: #f87171;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.success {
+  color: #34d399;
+  font-style: italic;
+  margin-bottom: 1rem;
+}

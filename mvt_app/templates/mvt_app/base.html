@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}DJ_Crud_Mvt_For_Test{% endblock %}</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/base_style.css' %}">
+
+  <style>
+  /* 🔹 Анимация под текстом */
+  .underline-hover {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .underline-hover::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(to right, #000000, #6b21a8);
+    transition: width 0.4s ease;
+  }
+
+  .underline-hover:hover::after {
+    width: 100%;
+  }
+
+  /* 🔹 Поля ввода */
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"],
+  input[type="password"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+    background-color: #111;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 0.5rem;
+    font-style: italic;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* 🔹 Опции в select */
+  select option {
+    background-color: #111;
+    color: #fff;
+  }
+
+  /* 🔹 Подсветка активных полей — неон-голубой */
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #00FFFF;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+  }
+
+  /* 🔹 Метки */
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #ccc;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  /* 🔹 Кнопки и ссылки */
+  button,
+  input[type="submit"],
+  a.button-link,
+  a {
+    background: transparent;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-style: italic;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s ease;
+  }
+
+  button::after,
+  input[type="submit"]::after,
+  a.button-link::after,
+  a::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(to right, #000000, #6b21a8);
+    transition: width 0.4s ease;
+  }
+
+  button:hover::after,
+  input[type="submit"]:hover::after,
+  a.button-link:hover::after,
+  a:hover::after {
+    width: 100%;
+  }
+
+  /* 🔹 Основные тексты */
+  p, span, li, div, h1, h2, h3, h4, h5, h6 {
+    color: #ddd;
+    font-style: italic;
+  }
+
+  /* 🔹 Сообщения */
+  .error {
+    color: #f87171;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .success {
+    color: #34d399;
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  nav * {
+    font-style: normal !important;
+    color: white !important;
+    text-shadow: none !important;
+  }
+</style>
+
+</head>
+<body class="bg-black text-white min-h-screen flex flex-col">
+
+  <!-- 🔹 Навбар -->
+  <nav class="bg-[#111] shadow">
+    <div class="container mx-auto flex justify-between items-center py-6 px-12 text-3xl font-bold">
+
+      <!-- Левая ссылка -->
+      <a href="{% url 'index' %}" class="underline-hover hover:text-white">
+        Меню
+      </a>
+
+      <!-- Центр — название -->
+      <a href="{% url 'mvt-index' %}" class="underline-hover hover:text-white">
+        {% block header %}Страница MVT{% endblock %}
+      </a>
+
+      <!-- Правая ссылка -->
+      <a href="{% url 'crud-index' %}" class="underline-hover hover:text-white">
+        CRUD
+      </a>
+
+    </div>
+  </nav>
+
+  <!-- 🔹 Контент -->
+  <main class="flex-grow container mx-auto px-6 py-12">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- 🔹 Футер -->
+  <footer class="bg-[#111] text-center py-4">
+    <a href="https://github.com/USERNAME/REPO"
+       class="underline-hover italic text-gray-400 transition-colors duration-300">
+      Версия 1.0.4
+    </a>
+  </footer>
+
+</body>
+</html>
