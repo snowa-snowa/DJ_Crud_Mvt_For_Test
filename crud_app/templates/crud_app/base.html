@@ -5,30 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}DJ_Crud_Mvt_For_Test{% endblock %}</title>
   <script src="https://cdn.tailwindcss.com"></script>
-
 <style>
-  /* 🔹 Анимация под текстом */
-  .underline-hover {
-    position: relative;
-    display: inline-block;
-    text-decoration: none;
-  }
-
-  .underline-hover::after {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    height: 2px;
-    width: 0%;
-    background: linear-gradient(to right, #000000, #6b21a8);
-    transition: width 0.4s ease;
-  }
-
-  .underline-hover:hover::after {
-    width: 100%;
-  }
-
   /* 🔹 Поля ввода */
   input[type="text"],
   input[type="email"],
@@ -60,7 +37,7 @@
   textarea:focus {
     outline: none;
     border-color: #00FFFF;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    box-shadow: 0 0 24px rgba(0, 255, 255, 0.6);
   }
 
   /* 🔹 Метки */
@@ -79,10 +56,8 @@
   a {
     background: transparent;
     color: #fff;
-    padding: 0.75rem 1rem;
     border: none;
     cursor: pointer;
-    font-weight: bold;
     font-style: italic;
     position: relative;
     display: inline-block;
@@ -111,7 +86,7 @@
   }
 
   /* 🔹 Основные тексты */
-  p, span, li, div, h1, h2, h3, h4, h5, h6 {
+  p, span, li, div {
     color: #ddd;
     font-style: italic;
   }
@@ -132,8 +107,27 @@
   nav * {
     font-style: normal !important;
     color: white !important;
-    text-shadow: none !important;
   }
+
+  footer * {
+    font-weight: normal !important;
+  }
+
+ul {
+  list-style-type: disc !important;
+  padding-left: 1.5rem !important; /* чтобы точка была не на краю */
+}
+
+li {
+  margin-bottom: 0.5rem !important;
+}
+
+h1 {
+  font-style: normal !important;
+  font-weight: bold !important;
+  font-size: 1.6rem !important;
+  margin-bottom: 0.8rem !important;
+}
 </style>
 
 </head>
@@ -168,7 +162,7 @@
 
   <!-- 🔹 Футер -->
   <footer class="bg-[#111] text-center py-4">
-    <a href="https://github.com/USERNAME/REPO"
+    <a href="https://github.com/snowa-snowa/DJ_Crud_Mvt_For_Test.git"
        class="underline-hover italic text-gray-400 transition-colors duration-300">
       Версия 1.0.4
     </a>
